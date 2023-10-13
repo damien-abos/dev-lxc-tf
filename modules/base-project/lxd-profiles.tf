@@ -27,6 +27,8 @@ resource "lxd_profile" "nano" {
       size = "8GB"
     }
   }
+
+  depends_on = [lxd_project.project]
 }
 
 resource "lxd_profile" "micro" {
@@ -57,6 +59,8 @@ resource "lxd_profile" "micro" {
       size = "8GB"
     }
   }
+
+  depends_on = [lxd_project.project]
 }
 
 resource "lxd_profile" "small" {
@@ -87,6 +91,8 @@ resource "lxd_profile" "small" {
       size = "8GB"
     }
   }
+
+  depends_on = [lxd_project.project]
 }
 
 resource "lxd_profile" "medium" {
@@ -117,6 +123,8 @@ resource "lxd_profile" "medium" {
       size = "10GB"
     }
   }
+
+  depends_on = [lxd_project.project]
 }
 
 resource "lxd_profile" "large" {
@@ -147,6 +155,8 @@ resource "lxd_profile" "large" {
       size = "20GB"
     }
   }
+
+  depends_on = [lxd_project.project]
 }
 
 resource "lxd_profile" "xlarge" {
@@ -177,4 +187,6 @@ resource "lxd_profile" "xlarge" {
       size = "40GB"
     }
   }
+
+  depends_on = [lxd_project.project]
 }

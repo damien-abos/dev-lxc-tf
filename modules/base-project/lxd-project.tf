@@ -5,5 +5,6 @@ resource "lxd_project" "project" {
     "features.images"          = "true"
     "features.profiles"        = "true"
     "features.storage.volumes" = "true"
+    "features.storage.buckets" = "false"
   }
 }

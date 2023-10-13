@@ -1,0 +1,35 @@
+write_files:
+- content: |
+    #!/bin/bash
+
+    set -e
+    set -x
+
+    # Requirements
+
+    ## Download and prepare rke2
+    curl -o /usr/local/bin/rke2-install https://get.rke2.io
+    chmod a+x /usr/local/bin/rke2-install
+    INSTALL_RKE2_TYPE="server" rke2-install
+
+    ## Setup configuration
+    mkdir -p /etc/rancher/rke2
+    cat << EOF > /etc/rancher/rke2/config.yaml
+    token: ${RKE2_CLUSTER_TOKEN:-"rke2_cluster_token"}
+    EOF
+
+    ## Enable and start service
+    systemctl enable --now rke2-server.service
+
+    # Post install
+
+    ## give access to kubectl
+    mkdir -p /root/.kube
+    ln -s /etc/rancher/rke2/rke2.yaml /root/.kube/config
+    ln -s /var/lib/rancher/rke2/bin/kubectl /usr/local/bin/kubectl
+  owner: root:root
+  path: /var/lib/cloud/bootstrap/setup-rke2-server.sh
+  permissions: '0755'
+
+runcmd:
+  - /var/lib/cloud/bootstrap/setup-rke2-server.sh

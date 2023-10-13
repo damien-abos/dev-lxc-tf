@@ -3,7 +3,9 @@ users:
   - name: dabos
     gecos: Damien Abos
     primary_group: dabos
-    groups: [ docker, sudo ]
+    groups: [ sudo ${EXTRA_GROUPS} ]
     ssh_authorized_keys:
       - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCwtJZLTYDHIaLoeKBTSmgmU0ccZdwig0coQoCaSugjUI/csjMxXhGI/UXbwlwejQ0NybxIdoxLlbs78VOqYyK9jQrKw1+u71Ubx8+opFIw7JBtj6nnbtt+WawC+XQh1w33EHNUTVXeXQYxg9tCH45J9ZZEn8RKSlsl7LqvAlUaae5W6QzQlyfagUAy7bHG41e0vGUFBdQSiznBq887QMBXAi5SQ5NmpuTE2sIPX+5G4cNa2osJzbGiglyxbOTPzzTkwmvtc/n1mQPLQWMgHamvqjxCuyEoDe36FEMLRsCDlbuJQWc5NZOE7OhYQ5070vMWg7WGylILkN9iTHxFEl/boLfc9BoMISmVjNoG1Ip45MCsKbMbNXrctX+SWaW3Y792askgc0VmxygoWl+ig1wFxr5SkaTMZHCHI3pmLN9YUwUP7iJuzJiS2IlDNKWhLtNVjX1SsR837MUupQppzRkg/d/6NJmQKHxJkYCMTLs2llhJ0Su2lgzbYVSKBdUZf8M="
       - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC8zZrsKLL8BPxE+GIuDtzYgN6H+njp2JZfRfC2FLsNzfgRSOClvC58j2juLzfCvmL6L7Y1MQTJz8KNghV+9Jxvdj4DKbezKZs6430hFiRiW0mJO+4L62DY+14VQ016xyO1/KZck5iI1uOVAqSwAWI5SiFr/XFiB7zD3Y763Cu0pmkkOZm+HWv7MdOTqQo0Kx2MIhyG6PCRjzLfkeyuLbmlzpaqOtCNtrEIukuA0LqELO1Aqe1dQKSsq9dH75rZShg9qNOv69HunOuwFiUXpTz+xlTbG+P4S/PpPtktph/YNGwRfFlGzxiLgPo8Cxblfy50OvvpxxxEhLf/IeGXANEP"
+    shell: /bin/bash
+    sudo: ALL=(ALL) NOPASSWD:ALL
