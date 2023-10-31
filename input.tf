@@ -22,3 +22,23 @@ variable "lxd_image_name" {
   type    = string
   default = "debian/12/cloud"
 }
+
+variable "docker-instance_count" {
+  type    = number
+  default = 0
+}
+
+variable "rke2-cluster_server_count" {
+  type    = number
+  default = 0
+}
+
+variable "rke2-cluster_agent_count" {
+  type    = number
+  default = 0
+}
+
+variable "haproxy-instance_count" {
+  type    = number
+  default = 0
+}

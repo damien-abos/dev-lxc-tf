@@ -15,7 +15,7 @@ write_files:
     ## Setup configuration
     mkdir -p /etc/rancher/rke2
     cat << EOF > /etc/rancher/rke2/config.yaml
-    server: ${RKE2_CLUSTER_INITIAL_SERVER:-"https://k8s-001-rke2-server:9345"}
+    server: ${RKE2_CLUSTER_INITIAL_SERVER:-"https://k8s-001-rke2-server-0:9345"}
     token: ${RKE2_CLUSTER_TOKEN:-"rke2_cluster_token"}
     EOF
 

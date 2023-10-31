@@ -34,6 +34,7 @@ resource "lxd_profile" "nano" {
 resource "lxd_profile" "micro" {
   project = lxd_project.project.name
   name    = "micro"
+  description = "1 vCPU / 1 GiB Mem / 8 GiB Disk"
 
   config = {
     "limits.cpu"    = 1
@@ -66,6 +67,7 @@ resource "lxd_profile" "micro" {
 resource "lxd_profile" "small" {
   project = lxd_project.project.name
   name    = "small"
+  description = "1 vCPU / 2 GiB Mem / 8 GiB Disk"
 
   config = {
     "limits.cpu"    = 1
@@ -98,6 +100,7 @@ resource "lxd_profile" "small" {
 resource "lxd_profile" "medium" {
   project = lxd_project.project.name
   name    = "medium"
+  description = "2 vCPU / 4 GiB Mem / 10 GiB Disk"
 
   config = {
     "limits.cpu"    = 2
@@ -130,6 +133,7 @@ resource "lxd_profile" "medium" {
 resource "lxd_profile" "large" {
   project = lxd_project.project.name
   name    = "large"
+  description = "2 vCPU / 8 GiB Mem / 20 GiB Disk"
 
   config = {
     "limits.cpu"    = 2
@@ -162,6 +166,7 @@ resource "lxd_profile" "large" {
 resource "lxd_profile" "xlarge" {
   project = lxd_project.project.name
   name    = "xlarge"
+  description = "4 vCPU / 12 GiB Mem / 40 GiB Disk"
 
   config = {
     "limits.cpu"    = 4
