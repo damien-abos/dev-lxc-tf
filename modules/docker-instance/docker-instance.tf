@@ -47,7 +47,7 @@ resource "lxd_instance" "docker-instance" {
   profiles         = var.docker-instance_profiles
   project          = var.docker-instance_project_name
   wait_for_network = true
-  start_on_create  = true
+  running  = true
   ephemeral        = false
   config = {
     "user.user-data" = "${data.template_cloudinit_config.docker-instance.rendered}"

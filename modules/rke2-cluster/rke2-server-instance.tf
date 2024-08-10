@@ -40,7 +40,7 @@ resource "lxd_instance" "rke2-server" {
   profiles         = var.rke2-cluster_profiles
   project          = var.rke2-cluster_project_name
   wait_for_network = true
-  start_on_create  = true
+  running  = true
   ephemeral        = false
 
   config = {

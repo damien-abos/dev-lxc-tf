@@ -7,7 +7,7 @@ terraform {
 
     lxd = {
       source  = "terraform-lxd/lxd"
-      version = "1.10.2"
+      version = "2.2.0"
     }
   }
 }
