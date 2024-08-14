@@ -28,6 +28,11 @@ variable "docker-instance_count" {
   default = 0
 }
 
+variable "rke2-cluster_profiles" {
+  type    = list(string)
+  default = ["medium"]
+}
+
 variable "rke2-cluster_server_count" {
   type    = number
   default = 0
