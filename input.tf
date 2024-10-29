@@ -20,7 +20,7 @@ variable "lxd_network_name" {
 
 variable "lxd_image_name" {
   type    = string
-  default = "debian/12/cloud"
+  default = "images:debian/12/cloud"
 }
 
 variable "docker-instance_count" {
@@ -44,6 +44,11 @@ variable "rke2-cluster_agent_count" {
 }
 
 variable "haproxy-instance_count" {
+  type    = number
+  default = 0
+}
+
+variable "hardened-jammy-instance_count" {
   type    = number
   default = 0
 }
