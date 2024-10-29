@@ -39,7 +39,7 @@ module "rke2-cluster" {
   rke2-cluster_project_name = module.base-project.lxd_project.name
   rke2-cluster_image        = "images:${module.base-project.lxd_cached_image_base-vm.fingerprint}"
   rke2-cluster_type         = "virtual-machine"
-  rke2-cluster_profiles     = ["medium"]
+  rke2-cluster_profiles     = var.rke2-cluster-profiles
   rke2-cluster_server_count = var.rke2-cluster_server_count
   rke2-cluster_agent_count  = var.rke2-cluster_agent_count
 
